@@ -1,91 +1,102 @@
 <!DOCTYPE html>
-<html lang="en"></html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Shopper Management - Web Storefront</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color:white;
-        }
-        h1, h2 {
-            color:black;
-        }
-        .form-container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 600px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        label {
-            display: block;
-            margin-top: 15px;
-        }
-        input, select {
-            padding: 8px;
-            width: 100%;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .button-group {
-            margin-top: 20px;
-        }
-        button {
-            padding: 10px 15px;
-            margin-right: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007acc;
-            color: white;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #005fa3;
-        }
-        footer {
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #777777;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Shopper Management - Web Storefront</title>
+  
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="CSS/Store.css">
+
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: white;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #777777;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Shopper Management</h1>
-    <h2>New / Update Shopper Details Form</h2>
+  <div class="container mt-4">
+    <h1 class="mb-3">Shopper Management</h1>
+    <h2 class="mb-4">New / Update Shopper Details Form</h2>
 
-    <div class="form-container">
-        <form id="shopperForm">
-            <label for="shopperId">Shopper ID (for updates only):</label>
-            <input type="text" id="shopperId" name="shopperId" placeholder="Leave blank to create new">
+    <div class="card p-4 shadow-sm">
+      <form id="shopperForm" novalidate>
+        <div class="mb-3">
+          <label for="shopperId" class="form-label">Shopper ID (for updates only)</label>
+          <input type="text" class="form-control" id="shopperId" name="shopperId" placeholder="Leave blank to create new">
+        </div>
 
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required>
+        <div class="mb-3">
+          <label for="firstName" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="firstName" name="firstName" required>
+        </div>
 
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required>
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lastName" name="lastName" required>
+        </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
 
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="123-456-7890">
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" name="phone" placeholder="123-456-7890">
+        </div>
 
-            <label for="membership">Membership Level:</label>
-            <select id="membership" name="membership">
-                <option value="basic">Basic</option>
-                <option value="premium">Premium</option>
-                <option value="vip">VIP</option>
-            </select>
+       
+        <div class="mb-3">
+          <label for="age" class="form-label">Age</label>
+          <input type="number" class="form-control" id="age" name="age" required>
+        </div>
 
-            <div class="button-group">
-                <button type="submit">Submit</button>
-                <button type="reset">Clear</button>
-            </div>
-        </form>
+        
+        <div class="mb-3">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" class="form-control" id="address" name="address" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="membership" class="form-label">Membership Level</label>
+          <select id="membership" name="membership" class="form-select">
+            <option value="basic">Basic</option>
+            <option value="premium">Premium</option>
+            <option value="vip">VIP</option>
+          </select>
+        </div>
+
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="reset" class="btn btn-secondary">Clear</button>
+        </div>
+      </form>
     </div>
+
+   
+    <div class="mt-4">
+      <h4>JSON Output:</h4>
+      <pre id="jsonOutput" class="bg-light p-3 border rounded"></pre>
+    </div>
+
+    <footer class="mt-5 text-center">
+      <p>Web Storefront Project – Shopper Management</p>
+    </footer>
+  </div>
+
+  
+  <script src="JS/Script.js"></script>
 </body>
 </html>
